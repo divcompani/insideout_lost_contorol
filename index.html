@@ -240,6 +240,8 @@
     border:1px solid var(--panel-line);
     font-size:.95rem;
   }
+  .city-chip.confirmed{display:inline-flex;align-items:center;gap:9px;padding:11px 18px;background:linear-gradient(135deg,rgba(49,211,126,.22),rgba(45,212,197,.13));border-color:rgba(65,230,144,.58);color:#f1fff7;font-weight:800;box-shadow:0 0 0 1px rgba(65,230,144,.08) inset,0 8px 24px rgba(25,170,100,.12);}
+  .verify-badge{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#35d57f;color:#07140d;font-size:12px;font-weight:1000;line-height:1;box-shadow:0 0 10px rgba(53,213,127,.55);}
   .city-chip.future{opacity:.6;font-size:.85rem;}
 
   /* ---------- CAMPAIGN TIMELINE ---------- */
@@ -264,7 +266,20 @@
   .signature{font-family:'Lalezar',cursive;font-size:1.6rem;color:var(--joy);}
   .contact{margin-top:60px;color:var(--text-dim);font-size:.95rem;}
   .contact a{color:var(--molaheze);text-decoration:none;}
-  footer{text-align:center;padding:40px 20px;color:#5b6294;font-size:.8rem;}
+  footer{text-align:center;padding:38px 20px 42px;color:#5b6294;font-size:.8rem;border-top:1px solid rgba(255,255,255,.06);}
+  .footer-partners{max-width:760px;margin:0 auto 26px;display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;}
+  .footer-partners img{display:block;width:auto;max-width:150px;height:42px;object-fit:contain;opacity:.72;cursor:pointer;user-select:none;-webkit-user-drag:none;transform:translateY(0) scale(1);filter:drop-shadow(0 0 0 rgba(255,255,255,0));transition:opacity .28s ease,transform .28s ease,filter .28s ease;}
+  .footer-partners img.divoolee{height:52px;}
+  .footer-partners img.fidibo{height:48px;}
+  .footer-partners img:hover{opacity:1;transform:translateY(-4px) scale(1.055);filter:drop-shadow(0 0 7px rgba(255,255,255,.7)) drop-shadow(0 0 18px rgba(45,212,197,.38));}
+  .footer-partners img:active{opacity:1;transform:scale(.96);}
+  .footer-partners img.logo-pulse{animation:footerLogoPulse .7s ease-out;}
+  @keyframes footerLogoPulse{
+    0%{opacity:1;transform:scale(.96);filter:drop-shadow(0 0 4px rgba(255,255,255,.8));}
+    45%{opacity:1;transform:translateY(-3px) scale(1.1);filter:drop-shadow(0 0 12px rgba(255,255,255,1)) drop-shadow(0 0 28px rgba(45,212,197,.85));}
+    100%{opacity:.72;transform:translateY(0) scale(1);filter:drop-shadow(0 0 0 rgba(255,255,255,0));}
+  }
+  .footer-copy{letter-spacing:.02em;}
 
   /* ---------- LANGUAGE + MUSIC CONTROLS ---------- */
   .site-controls{
@@ -284,6 +299,17 @@
   .control-btn:hover,.control-btn.active{color:#071022;background:var(--molaheze);}
   .music-btn{min-width:112px;color:var(--text);border-color:var(--panel-line);}
   .music-btn.playing{color:#071022;background:var(--joy);}
+
+  /* ---------- PROJECT PARTNERS ---------- */
+  .partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px;}
+  .partner-card{background:linear-gradient(145deg,rgba(45,212,197,.11),rgba(74,144,217,.05));border:1px solid var(--panel-line);border-radius:20px;padding:18px;text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .partner-logo-stage{width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:#f7f8fa;border-radius:15px;padding:22px;margin-bottom:20px;overflow:hidden;}
+  .partner-logo-stage img{display:block;max-width:100%;max-height:128px;object-fit:contain;filter:grayscale(1);opacity:.82;mix-blend-mode:multiply;}
+  .partner-card.shahrzad .partner-logo-stage{background:#f7f8fa;}
+  .partner-card.shahrzad .partner-logo-stage img{max-height:150px;}
+  .partner-card h3{font-size:1.42rem;color:var(--text);margin-bottom:9px;}
+  .partner-role{display:inline-flex;align-items:center;justify-content:center;min-height:30px;padding:5px 12px;margin-bottom:12px;border:1px solid rgba(45,212,197,.28);border-radius:999px;color:var(--joy);font-size:.76rem;font-weight:800;}
+  .partner-card p{color:#d4d8f2;font-size:.93rem;line-height:1.9;margin:0;}
 
   /* ---------- DESIGN DEVELOPMENT GALLERIES ---------- */
   .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px;}
@@ -319,6 +345,10 @@
   html[dir="ltr"] .tl-item::before{right:auto;left:-32px;}
   html[dir="ltr"] .pkg-card li,html[dir="ltr"] .partner-card li{padding-right:0;padding-left:20px;}
   html[dir="ltr"] .pkg-card li::before,html[dir="ltr"] .partner-card li::before{right:auto;left:0;}
+
+  @media(max-width:1000px){
+    .partner-grid{grid-template-columns:repeat(2,1fr);}
+  }
 
   @media(max-width:640px){
     .legacy-grid{grid-template-columns:1fr;}
@@ -450,6 +480,37 @@
   </div>
 </section>
 
+<!-- PROJECT PARTNERS -->
+<section class="block">
+  <div class="wrap reveal">
+    <div class="kicker">پارتنرهای پروژه</div>
+    <h2 class="title">چهار همراه، یک مسیر مشترک</h2>
+    <p class="lead">از تولید اثر و میزبانی اجرای زنده تا فروش بلیت و دسترسی دیجیتال، این چهار مجموعه حلقه‌های اصلی شکل‌گیری پروژه و ارتباط آن با مخاطب را می‌سازند.</p>
+    <div class="partner-grid">
+      <div class="partner-card">
+        <div class="partner-logo-stage"><img src="assets/partners/divoolee.png" alt="لوگوی کمپانی دیوولی"></div>
+        <h3>کمپانی دیوولی</h3><div class="partner-role">تولیدکننده نمایش</div>
+        <p>کمپانی تئاتر موزیکال فانتزی دیوولی، مجموعه خالق و تولیدکننده نمایش‌های این مسیر و مسئول شکل‌گیری اجرایی پروژه است.</p>
+      </div>
+      <div class="partner-card shahrzad">
+        <div class="partner-logo-stage"><img src="assets/partners/shahrzad.png" alt="لوگوی پردیس تئاتر شهرزاد"></div>
+        <h3>پردیس تئاتر شهرزاد</h3><div class="partner-role">میزبان اجرای نمایش</div>
+        <p>سالن شماره ۲ پردیس تئاتر شهرزاد، خانه اجرای تهران و بستر اصلی تجربه زنده این پروژه است.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-stage"><img src="assets/partners/fidibo.svg" alt="لوگوی فیدیبو"></div>
+        <h3>فیدیبو</h3><div class="partner-role">سامانه فروش بلیت</div>
+        <p>بستر فروش بلیت و ارتباط دیجیتال با مخاطبان نمایش در مسیر معرفی و دسترسی به اجرا.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-stage"><img src="assets/partners/digikala.png" alt="لوگوی دیجی‌کالا"></div>
+        <h3>دیجی‌کالا</h3><div class="partner-role">پارتنر دسترسی دیجیتال</div>
+        <p>ظرفیتی گسترده برای معرفی نمایش و دسترسی مستقیم به خانواده‌ها و مخاطبان آنلاین در سراسر ایران.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CHARACTERS -->
 <section class="block">
   <div class="wrap reveal">
@@ -512,7 +573,7 @@
         <div class="char-orb"></div>
         <div>
           <h3>ملاحظه خانم</h3>
-          <div class="actor">فهیمه شایانفر — شخصیت تازه و اختصاصی اقتباس ایرانی</div>
+          <div class="actor">فهیمه شایان‌فر — شخصیت تازه و اختصاصی اقتباس ایرانی</div>
           <p>مؤدب، آرام و ظاهراً خیرخواه؛ اما وقتی کنترل اتاق فرمان را در دست می‌گیرد، باران دیگر نمی‌تواند خواسته واقعی خود را تشخیص دهد.</p>
           <span class="status">نقش قطعی</span>
         </div>
@@ -591,9 +652,9 @@
     <p class="lead">اجرای اصلی در <b>پردیس تئاتر شهرزاد، سالن شماره ۲</b> برگزار می‌شود. طراحی تک‌لوکیشن و دکور ماژولار، اجرا در شهرهای مختلف را امکان‌پذیر می‌کند.</p>
     <p class="body-p">شهرهایی که پیش از آغاز اجرای تهران، اعلام آمادگی برای میزبانی کرده‌اند:</p>
     <div class="city-row">
-      <div class="city-chip">کرج</div>
-      <div class="city-chip">ساری</div>
-      <div class="city-chip">شیراز</div>
+      <div class="city-chip confirmed"><span class="verify-badge" aria-hidden="true">✓</span>کرج</div>
+      <div class="city-chip confirmed"><span class="verify-badge" aria-hidden="true">✓</span>ساری</div>
+      <div class="city-chip confirmed"><span class="verify-badge" aria-hidden="true">✓</span>شیراز</div>
       <div class="city-chip future">مشهد</div>
       <div class="city-chip future">اصفهان</div>
       <div class="city-chip future">رشت</div>
@@ -666,7 +727,15 @@
   </div>
 </section>
 
-<footer>درون بیرون: فرمان گمشده — نسخه ویژه مشاوران و عوامل پروژه</footer>
+<footer>
+  <div class="footer-partners" aria-label="پارتنرهای پروژه">
+    <img class="divoolee" src="assets/partners/footer/divoolee-white.png" alt="دیوولی" draggable="false">
+    <img src="assets/partners/footer/shahrzad-white.png" alt="پردیس تئاتر شهرزاد" draggable="false">
+    <img class="fidibo" src="assets/partners/footer/fidibo-white.png" alt="فیدیبو" draggable="false">
+    <img src="assets/partners/footer/digikala-white.png" alt="دیجی‌کالا" draggable="false">
+  </div>
+  <div class="footer-copy">درون بیرون: فرمان گمشده — نسخه ویژه مشاوران و عوامل پروژه</div>
+</footer>
 
 <script>
   // Bilingual interface — Persian is the default language.
@@ -701,6 +770,22 @@
     'برنامه تبلیغات و روابط عمومی':'ADVERTISING & PR','مسیر معرفی نمایش به مخاطب':'THE AUDIENCE JOURNEY','۶ تا ۸ هفته پیش از افتتاحیه':'6–8 WEEKS BEFORE OPENING','ایجاد کنجکاوی':'BUILD CURIOSITY','گوی‌های رنگی احساسات، تصاویر محدود از میز فرمان، شمارش معکوس تا رونمایی؛ بدون افشای کامل داستان.':'Color-coded emotion orbs, glimpses of the control desk and a countdown—without revealing the full story.','۴ تا ۶ هفته پیش از افتتاحیه':'4–6 WEEKS BEFORE OPENING','رونمایی شخصیت‌ها':'CHARACTER REVEALS','هر شخصیت به‌صورت مستقل معرفی می‌شود: شادی، خشم، انزجار، ترس، ملاحظه خانم و در پایان، رونمایی بازیگر نقش غم.':'Each character is introduced separately, ending with the reveal of the actor playing Sadness.','۳ تا ۴ هفته پیش از افتتاحیه':'3–4 WEEKS BEFORE OPENING','آغاز فروش':'TICKET SALES LAUNCH','پوستر و تیزر رسمی، فعال‌شدن سامانه فروش بلیت، پیش‌فروش محدود و فروش گروهی مدارس و سازمان‌ها.':'Official poster and trailer, ticketing launch, limited presale and group sales for schools and organizations.','روز اجرا':'OPENING DAY','افتتاحیه':'PREMIERE EVENT','رویدادی رسانه‌ای با حضور هنرمندان، رسانه‌ها و اینفلوئنسرهای خانوادگی؛ همراه با استیج عکاسی اختصاصی نمایش.':'A media event with artists, press and family influencers, featuring a dedicated production photo stage.','در طول اجرا':'DURING THE RUN','حفظ فروش':'SUSTAIN MOMENTUM','واکنش کودکان و والدین، پشت‌صحنه، گزارش سانس‌های پرفروش و اعلام تمدید یا سانس‌های تازه.':'Audience reactions, behind-the-scenes content, high-demand performance updates and extension announcements.','پس از تهران':'AFTER TEHRAN','تور شهرستان‌ها':'NATIONAL TOUR','کمپینی کوتاه و مستقل برای هر شهر، با تیزر اختصاصی، رسانه‌های محلی و افتتاحیه کوچک شهری.':'A focused campaign for each city with a tailored trailer, local media and a city premiere.',
     'سخن پایانی':'FINAL WORD','من ایران را در چشم‌های کودکانی می‌بینم که هنوز می‌توانند جهان را از نو تصور کنند.':'I see Iran in the eyes of children who can still imagine the world anew.','تخیل برای کودک، فرار از واقعیت نیست؛ نخستین تمرین او برای تغییر واقعیت است.':'For a child, imagination is not an escape from reality; it is the first rehearsal for changing it.','آرزوی من ساختن جهانی کوچک روی صحنه است که فرزندان ایران در آن احساس امنیت کنند و باور کنند آینده هنوز می‌تواند زیبا باشد.':'My wish is to create a small world on stage where the children of Iran feel safe and believe that the future can still be beautiful.','این نسخه برای مطالعه، هم‌فکری و دریافت نظر مشاوران و عوامل پروژه تهیه شده است.':'This edition has been prepared for review, collaborative discussion and feedback from the project’s consultants and creative team.','تماس: ۰۹۱۲۸۹۲۵۷۳۸  –  ۰۹۳۳۳۴۲۵۵۱۱':'CONTACT: +98 912 892 5738  –  +98 933 342 5511','ایمیل:':'EMAIL:','اینستاگرام:':'INSTAGRAM:','درون بیرون: فرمان گمشده — نسخه ویژه مشاوران و عوامل پروژه':'INSIDE OUT: THE LOST CONTROL — CONSULTANT & CREATIVE TEAM EDITION'
   }));
+  en.set('فهیمه شایان‌فر — شخصیت تازه و اختصاصی اقتباس ایرانی','Fahimeh Shayanfar — an original character created for the Iranian adaptation');
+  en.set('پارتنرهای پروژه','PROJECT PARTNERS');
+  en.set('چهار همراه، یک مسیر مشترک','FOUR PARTNERS, ONE SHARED JOURNEY');
+  en.set('از تولید اثر و میزبانی اجرای زنده تا فروش بلیت و دسترسی دیجیتال، این چهار مجموعه حلقه‌های اصلی شکل‌گیری پروژه و ارتباط آن با مخاطب را می‌سازند.','From production and live performance to ticketing and digital reach, these four partners form the project’s core delivery and audience journey.');
+  en.set('کمپانی دیوولی','DIVOOLEE COMPANY');
+  en.set('تولیدکننده نمایش','PRODUCTION COMPANY');
+  en.set('کمپانی تئاتر موزیکال فانتزی دیوولی، مجموعه خالق و تولیدکننده نمایش‌های این مسیر و مسئول شکل‌گیری اجرایی پروژه است.','Divoolee Fantasy Musical Theater Company is the creative production company behind this body of work and the team responsible for bringing the project to the stage.');
+  en.set('پردیس تئاتر شهرزاد','SHAHRZAD THEATRE COMPLEX');
+  en.set('میزبان اجرای نمایش','PERFORMANCE VENUE');
+  en.set('سالن شماره ۲ پردیس تئاتر شهرزاد، خانه اجرای تهران و بستر اصلی تجربه زنده این پروژه است.','Hall 2 at Shahrzad Theatre Complex is the project’s Tehran home and the primary setting for its live audience experience.');
+  en.set('فیدیبو','FIDIBO');
+  en.set('سامانه فروش بلیت','TICKETING PLATFORM');
+  en.set('بستر فروش بلیت و ارتباط دیجیتال با مخاطبان نمایش در مسیر معرفی و دسترسی به اجرا.','The show’s ticketing and digital audience platform, supporting discovery and access to performances.');
+  en.set('دیجی‌کالا','DIGIKALA');
+  en.set('پارتنر دسترسی دیجیتال','DIGITAL REACH PARTNER');
+  en.set('ظرفیتی گسترده برای معرفی نمایش و دسترسی مستقیم به خانواده‌ها و مخاطبان آنلاین در سراسر ایران.','A broad platform for introducing the production and reaching families and online audiences across Iran.');
   const textNodes=[];
   const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(node){
     return node.parentElement && !['SCRIPT','STYLE','AUDIO'].includes(node.parentElement.tagName) && node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
@@ -755,6 +840,16 @@
     });
   }, {threshold:.15});
   revealEls.forEach(el=>io.observe(el));
+
+  // Footer partner logos: luminous feedback for mouse and touch, without image dragging.
+  document.querySelectorAll('.footer-partners img').forEach(logo=>{
+    logo.addEventListener('pointerdown',()=>{
+      logo.classList.remove('logo-pulse');
+      void logo.offsetWidth;
+      logo.classList.add('logo-pulse');
+    });
+    logo.addEventListener('animationend',()=>logo.classList.remove('logo-pulse'));
+  });
 
   // Floating magical orbs
   const field = document.getElementById('orb-field');
